@@ -1,0 +1,138 @@
+
+h1,
+h2,
+h3,
+h4,
+h5,
+
+* {
+    box-sizing : border-box;
+}
+
+body {
+    padding     : 50px;
+
+    background  : linear-gradient(to right, #F93D66, #6D47D9);
+    font-family : sans-serif;
+}
+
+h6 {
+    margin : 0 0 5px 0;
+}
+
+p {
+    margin : 0 0 20px 0;
+}
+
+.close {
+    background : none;
+    color      : black;
+    border     : 0;
+}
+
+.gallery {
+    display               : grid;
+
+    grid-template-columns : repeat(auto-fill, 100px);
+    grid-auto-rows        : 100px;
+    grid-auto-flow        : dense;
+}
+
+.item{
+    display               : grid;
+
+    overflow              : hidden;
+
+    grid-template-rows    : 1;
+    grid-template-columns : 1;
+}
+
+.item img{
+    height      : 100%;
+    width       : 100%;
+
+    grid-column : 1 / -1;
+    grid-row    : 1 / -1;
+    object-fit  : cover;
+}
+
+.item_overlay{
+    position      : relative;
+    display       : grid;
+
+    background    : #ffc60032;
+
+    grid-column   : 1 /-1;
+    grid-row      : 1 /-1;
+    justify-items : center;
+    align-items   : center;
+    transition: 0.2s;
+    transform: translateY(100%);
+}
+
+.item_overlay button{
+    padding        : 5px;
+
+    background     : none;
+    color          : white;
+    text-transform : uppercase;
+    border         : 2px solid white;
+}
+
+.item:hover .item_overlay{
+    transform: translateY(0);
+}
+
+
+.item.v2{
+    grid-row : span 2;
+}
+
+.item.v3{
+    grid-row : span 3;
+}
+
+.item.v4{
+    grid-row : span 4;
+}
+
+.item.h2{
+    grid-column : span 2;
+}
+
+.item.h3{
+    grid-column : span 3;
+}
+
+.item.h4{
+    grid-column : span 4;
+}
+
+.overlay {
+    position   : fixed;
+    display    : none;
+    top        : 0;
+    right      : 0;
+    bottom     : 0;
+    left       : 0;
+    z-index    : 2;
+
+    background : rgba(0, 0, 0, 0.7);
+}
+
+.overlay.open {
+    display : grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-inner {
+    width      : 700px;
+    padding    : 20px;
+
+    background : white;
+}
+
+.overlay img {
+    width : 100%;
+}
